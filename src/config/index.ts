@@ -1,0 +1,12 @@
+export const CONFIG = {
+  DEFAULT_TIMEOUT: 30000,
+  DEFAULT_MAX_RETRIES: 3,
+  DEFAULT_RETRY_DELAY: 1000,
+  MAX_FILENAME_LENGTH: 200,
+  LARGE_FILE_TIMEOUT: 60000,
+  MAX_BUFFER_SIZE: 500 * 1024 * 1024,
+
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
+
+
