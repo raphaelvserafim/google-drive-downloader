@@ -521,6 +521,3 @@ export class GoogleDriveDownloader {
   }
 }
 
-export const createGoogleDriveDownloader = () => new GoogleDriveDownloader();
-
-export const { saveToFile } = GoogleDriveDownloader;
