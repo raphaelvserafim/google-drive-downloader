@@ -279,6 +279,12 @@ export class GoogleDriveDownloader {
       }
     }
 
+    // URLs ATUALIZADAS 2024 - PRIORIZAR drive.usercontent.google.com
+    urls.push(`https://drive.usercontent.google.com/download?id=${fileId}&export=download&authuser=0`);
+    urls.push(`https://drive.usercontent.google.com/download?id=${fileId}&export=download&confirm=t`);
+    urls.push(`https://drive.usercontent.google.com/download?id=${fileId}&export=download`);
+
+
     // Default download URLs for normal files
     urls.push(`https://drive.google.com/uc?export=download&id=${fileId}`);
     urls.push(`https://drive.google.com/uc?id=${fileId}&export=download`);
