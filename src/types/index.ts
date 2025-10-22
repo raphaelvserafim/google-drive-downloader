@@ -22,6 +22,7 @@ export interface IDownloadResult {
   mimeType?: string;
   size?: number;
   error?: string;
+  totalBytes?: number;
 }
 
 export interface IDownloadOptions {

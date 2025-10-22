@@ -81,7 +81,8 @@ export class GoogleDriveDownloader {
           };
 
           response = await axios(axiosConfig);
-
+          const totalBytes = parseInt(response?.headers['content-length'] || '0', 10);
+          console.log('📏 File size (from header):', totalBytes || 'unknown');
           // Check if response is HTML (indicating error or confirmation page)
           const contentType = response?.headers['content-type'] || '';
           if (contentType.includes('text/html')) {
@@ -467,13 +468,16 @@ export class GoogleDriveDownloader {
 
       console.log('✅ Stream created successfully!');
       console.log('📁 Name:', finalFileName);
+      const totalBytes = parseInt(response.headers['content-length'] || '0', 10);
+      console.log('📏 File size (from header):', totalBytes || 'unknown');
 
       return {
         success: true,
         file: downloadedFile,
         fileName: finalFileName,
         fileId: fileId,
-        mimeType: finalMimeType || 'application/octet-stream'
+        mimeType: finalMimeType || 'application/octet-stream',
+        totalBytes: totalBytes || 0
       };
     }
   }
@@ -518,6 +522,7 @@ export class GoogleDriveDownloader {
           'User-Agent': this.userAgent
         }
       });
+
 
       return await this.processDownloadResponse(response, fileInfo, fileId, asBuffer, exportFormat);
 
